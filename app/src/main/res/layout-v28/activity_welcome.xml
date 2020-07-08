@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/activity_welcome_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+        
+    </androidx.viewpager.widget.ViewPager>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/mshare_bg_white"
+        android:paddingLeft="@dimen/short_content_width_padding"
+        android:paddingRight="@dimen/short_content_width_padding">
+
+
+        <ProgressBar
+            android:id="@+id/activity_welcome_progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center" />
+    <!--
+        <com.trncic.library.DottedProgressBar
+            android:id="@+id/activity_welcome_progress_bar"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:padding="30dp"
+            android:layout_gravity="center"
+            app:activeDot="@drawable/mshare_active_dot"
+            app:dotSize="29dp"
+            app:inactiveDot="@drawable/mshare_inactive_dot"
+            app:jumpingSpeed="670"
+            app:spacing="15dp" />
+        -->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/activity_welcome_view_previous"
+            style="@style/OverflowButton"
+            android:layout_gravity="start|center_vertical"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@drawable/mshare_navigate_before" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/activity_welcome_view_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/fab_margin"
+            android:background="@drawable/mshare_blue_outlined_oval"
+            app:srcCompat="@drawable/mshare_navigate_next_blue" />
+
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <PreferenceCategory android:title="@string/text_application">
+        <EditTextPreference
+            android:dialogTitle="@string/text_deviceNameTitle"
+            android:inputType="text"
+            android:key="device_name"
+            android:maxLength="32"
+            android:summary="@string/text_deviceNameSummary"
+            android:title="@string/text_deviceName" />
+
+        <PreferenceScreen
+            android:summary="@string/text_storagePathSummary"
+            android:title="@string/text_storagePath">
+            <intent android:action="com.genonbeta.intent.action.UPDATE_STORAGE_PATH" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>
