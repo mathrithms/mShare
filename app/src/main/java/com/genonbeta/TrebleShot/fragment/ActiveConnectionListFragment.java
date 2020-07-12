@@ -136,16 +136,6 @@ public class ActiveConnectionListFragment extends EditableListFragment<ActiveCon
     @Override
     public boolean onDefaultClickAction(EditableListAdapter.EditableViewHolder holder)
     {
-        /*try {
-            ActiveConnectionListAdapter.AddressedEditableInterface editableInterface =
-                    getAdapter().getItem(holder);
-
-            new WebShareDetailsDialog(getContext(), TextUtils.makeWebShareLink(getContext(),
-                    editableInterface.getInterface().getAssociatedAddress())).show();
-        } catch (NotReadyException e) {
-            return false;
-        }*/
-
         return true;
     }
 

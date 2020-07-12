@@ -5,9 +5,6 @@
         <item name="android:statusBarColor">?statusBarColor</item>
     </style>
 
-    <style name="Theme.TrebleShot.Dark.Base" parent="Theme.Prototype.TrebleShot.Dark.Base">
-        <item name="android:statusBarColor">?statusBarColor</item>
-    </style>
     <!-- generalization end -->
 
     <style name="Theme.TrebleShot" parent="Theme.TrebleShot.Base">

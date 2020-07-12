@@ -134,25 +134,7 @@ public class TextEditorActivity extends Activity implements SnackbarSupport
     @Override
     public void onBackPressed()
     {
-        //boolean hasObject = mTextStreamObject != null;
         boolean hasEntry = mEditTextEditor.getText().length() > 0;
-        //boolean hasSavedText = hasObject && mTextStreamObject.text != null && mTextStreamObject.text.length() > 0;
-
-        /*if (!hasEntry || (hasSavedText && mTextStreamObject.text.equals(mEditTextEditor.getText().toString()))
-                || (System.currentTimeMillis() - mBackPressTime) < 3000)
-            super.onBackPressed();
-        else
-            createSnackbar(hasObject ? R.string.mesg_clipboardUpdateNotice : R.string.mesg_textSaveNotice)
-                    .setAction(hasObject ? R.string.butn_update : R.string.butn_save, new View.OnClickListener()
-                    {
-                        @Override
-                        public void onClick(View v)
-                        {
-                            saveText();
-                            finish();
-                        }
-                    })
-                    .show();*/
 
         mBackPressTime = System.currentTimeMillis();
     }

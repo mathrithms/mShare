@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:fitsSystemWindows="false"
     android:orientation="vertical">
 
@@ -18,9 +19,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@drawable/mshare_bg_white"
+        android:background="@color/msTransparent"
         android:paddingLeft="@dimen/short_content_width_padding"
-        android:paddingRight="@dimen/short_content_width_padding">
+        android:paddingRight="@dimen/short_content_width_padding"
+        tools:override="true">
 
 
         <ProgressBar
@@ -57,7 +59,9 @@
             android:layout_gravity="end"
             android:layout_margin="@dimen/fab_margin"
             android:background="@drawable/mshare_blue_outlined_oval"
-            app:srcCompat="@drawable/mshare_navigate_next_blue" />
+            app:srcCompat="@drawable/mshare_navigate_next_blue"
+            tools:override="true"/>
 
     </FrameLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

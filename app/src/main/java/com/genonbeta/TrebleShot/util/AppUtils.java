@@ -107,27 +107,6 @@ public class AppUtils
         object.put(Keyword.DEVICE_INFO, deviceInformation);
     }
 
-    public static void createFeedbackIntent(Activity activity)
-    {
-        Intent intent = new Intent(Intent.ACTION_SEND)
-                .setType("text/plain")
-                .putExtra(Intent.EXTRA_EMAIL, new String[]{AppConfig.EMAIL_DEVELOPER})
-                .putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.text_appName));
-
-        DocumentFile logFile = AppUtils.createLog(activity);
-
-        if (logFile != null) {
-            try {
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                        .putExtra(Intent.EXTRA_STREAM, (FileUtils.getSecureUri(activity, logFile)));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        activity.startActivity(Intent.createChooser(intent, activity.getString(R.string.butn_feedbackContact)));
-    }
-
     public static boolean checkRunningConditions(Context context)
     {
         for (RationalePermissionRequest.PermissionRequest request : getRequiredPermissions(context))

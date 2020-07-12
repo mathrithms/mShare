@@ -61,10 +61,10 @@ public class HotspotManagerFragment
     private StatusReceiver mStatusReceiver = new StatusReceiver();
     private UIConnectionUtils mConnectionUtils;
 
-    private View mContainerText1;
+    //private View mContainerText1;
     private View mContainerText2;
     private View mContainerText3;
-    private TextView mText1;
+    //private TextView mText1;
     private TextView mText2;
     private TextView mText3;
     private ImageView mCodeView;
@@ -176,7 +176,7 @@ public class HotspotManagerFragment
     public void onResume()
     {
         super.onResume();
-
+        assert getContext() != null;
         getContext().registerReceiver(mStatusReceiver, mIntentFilter);
         updateState();
 
@@ -298,11 +298,11 @@ public class HotspotManagerFragment
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            mContainerText1.setVisibility(text1 == null ? View.GONE : View.VISIBLE);
+//            mContainerText1.setVisibility(text1 == null ? View.GONE : View.VISIBLE);
             mContainerText2.setVisibility(text2 == null ? View.GONE : View.VISIBLE);
             mContainerText3.setVisibility(text3 == null ? View.GONE : View.VISIBLE);
 
-            mText1.setText(text1);
+//            mText1.setText(text1);
             mText2.setText(text2);
             mText3.setText(text3);
             mToggleButton.setText(buttonText);

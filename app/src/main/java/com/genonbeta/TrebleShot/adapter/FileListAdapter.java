@@ -115,10 +115,6 @@ public class FileListAdapter
                     .getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
                     getContext().getString(R.string.text_downloads), R.drawable.ic_file_download_white_24dp));
 
-            //lister.offerObliged(this, new PublicDirectoryHolder(Environment
-            //        .getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC),
-            //        getContext().getString(R.string.text_music), R.drawable.ic_music_note_white_24dp));
-
             File fileSystemRoot = new File(".");
 
             if (fileSystemRoot.canRead())

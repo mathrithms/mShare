@@ -388,7 +388,7 @@ public class NetworkDeviceListFragment
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
             builder.setTitle(hotspotNetwork.nickname);
-            builder.setMessage(R.string.text_trebleshotHotspotDescription);
+            builder.setMessage(R.string.text_mShareHotspotDescription);
             builder.setNegativeButton(R.string.butn_close, null);
             builder.setPositiveButton(getConnectionUtils().isConnectedToNetwork(hotspotNetwork) ? R.string.butn_disconnect : R.string.butn_connect, new DialogInterface.OnClickListener()
             {

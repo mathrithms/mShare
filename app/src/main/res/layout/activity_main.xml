@@ -11,7 +11,7 @@
     <include
         layout="@layout/toolbar_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -21,6 +21,7 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/header_default_device"
         app:menu="@menu/drawer_main"
-        app:itemIconTint="@color/msWhite"/>
+        app:itemTextColor="@color/msBlack"
+        app:itemIconTint="@color/msBlack"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

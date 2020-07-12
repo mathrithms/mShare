@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SearchView;
 import androidx.collection.ArrayMap;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -197,9 +196,9 @@ abstract public class EditableListFragment<T extends Editable, V extends Editabl
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.actions_abs_editable_list, menu);
 
-        MenuItem filterItem = menu.findItem(R.id.actions_abs_editable_filter);
+     //   MenuItem filterItem = menu.findItem(R.id.actions_abs_editable_filter);
 
-        if (filterItem != null) {
+        /*if (filterItem != null) {
             filterItem.setVisible(mFilteringSupported);
 
             if (mFilteringSupported) {
@@ -225,7 +224,7 @@ abstract public class EditableListFragment<T extends Editable, V extends Editabl
                     });
                 }
             }
-        }
+        }*/
 
         MenuItem gridSizeItem = menu.findItem(R.id.actions_abs_editable_grid_size);
 

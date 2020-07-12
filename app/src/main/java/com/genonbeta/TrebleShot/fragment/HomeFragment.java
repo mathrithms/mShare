@@ -31,15 +31,11 @@ public class HomeFragment
     {
         final View view = inflater.inflate(R.layout.layout_home_fragment, container, false);
 
-        //final BottomNavigationView bottomNavigationView = view.findViewById(R.id.layout_home_bottom_navigation_view);
         mViewPager = view.findViewById(R.id.layout_home_view_pager);
         mAdapter = new SmartFragmentPagerAdapter(getContext(), getChildFragmentManager());
 
         mAdapter.add(new SmartFragmentPagerAdapter.StableItem(0, TransferGroupListFragment.class, null));
         mAdapter.add(new SmartFragmentPagerAdapter.StableItem(1, FileExplorerFragment.class, null));
-        //mAdapter.add(new SmartFragmentPagerAdapter.StableItem(2, TextStreamListFragment.class, null));
-
-        //mAdapter.createTabs(bottomNavigationView);
         mViewPager.setAdapter(mAdapter);
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener()
@@ -55,28 +51,12 @@ public class HomeFragment
                 
             }
 
-            //@Override
-            //public void onPageSelected(int i)
-            //{
-            //    bottomNavigationView.setSelectedItemId(i);
-            //}
-
             @Override
             public void onPageScrollStateChanged(int i)
             {
 
             }
         });
-
-        /*bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
-        {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
-            {
-                mViewPager.setCurrentItem(menuItem.getOrder());
-                return true;
-            }
-        });*/
 
         return view;
     }

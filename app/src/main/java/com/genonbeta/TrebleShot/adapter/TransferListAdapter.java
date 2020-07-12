@@ -843,7 +843,7 @@ public class TransferListAdapter
         {
             if (group.isServedOnWeb) {
                 imageView.setVisibility(View.VISIBLE);
-                imageView.setImageResource(R.drawable.ic_web_white_24dp);
+                imageView.setImageResource(R.drawable.mshare_globe);
             } else
                 super.handleStatusIcon(imageView, group);
         }

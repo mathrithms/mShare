@@ -46,6 +46,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -79,7 +80,7 @@ public class WebShareServer extends NanoHTTPD
     private NotificationUtils mNotificationUtils;
     private Context mContext;
 
-    public WebShareServer(Context context, int port) throws IOException
+    public WebShareServer(Context context, int port) //throws IOException
     {
         super(port);
         mContext = context;
@@ -465,7 +466,7 @@ public class WebShareServer extends NanoHTTPD
                     + packageInfo.versionName + ".apk";
 
             values.put("apk_link", "/trebleshot/" + fileName);
-            values.put("apk_filename", mContext.getString(R.string.text_dowloadTrebleshotAndroid));
+            values.put("apk_filename", mContext.getString(R.string.text_dowloadmShareAndroid));
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -546,7 +547,7 @@ public class WebShareServer extends NanoHTTPD
     {
         // Android Studio may say the escape characters at the end are redundant.
         // They are not in Java 1.7.
-        return Pattern.compile("\\$\\{([a-zA-Z_]+)\\}");
+        return Pattern.compile("\\$\\{([a-zA-Z_]+)}");
     }
 
     private InputStream openFile(String fileName) throws IOException
@@ -676,7 +677,7 @@ public class WebShareServer extends NanoHTTPD
             super(status, mimeType, new InputStream()
             {
                 @Override
-                public int read() throws IOException
+                public int read() //throws IOException
                 {
                     return -1;
                 }
@@ -752,7 +753,7 @@ public class WebShareServer extends NanoHTTPD
                 if (this.getStatus() == null)
                     throw new Error("sendResponse(): Status can't be null.");
 
-                PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8")), false);
+                PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8)), false);
                 pw.print("HTTP/1.1 " + this.getStatus().getDescription() + " \r\n");
 
                 if (mime != null)

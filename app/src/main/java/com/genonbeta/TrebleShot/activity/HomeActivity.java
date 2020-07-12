@@ -10,6 +10,9 @@ import android.content.IntentFilter;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,8 +27,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -54,6 +59,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.io.File;
 import java.util.Locale;
+import java.util.Objects;
 
 public class HomeActivity
         extends Activity
@@ -65,13 +71,13 @@ public class HomeActivity
     private DrawerLayout mDrawerLayout;
     private PowerfulActionMode mActionMode;
     private HomeFragment mHomeFragment;
-    //private MenuItem mTrustZoneToggle;
     private IntentFilter mFilter = new IntentFilter();
     private BroadcastReceiver mReceiver = null;
 
     private long mExitPressTime;
     private int mChosenMenuItemId;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -147,14 +153,6 @@ public class HomeActivity
                     })
                     .show();
         }
-
-        /*if (Keyword.Flavor.googlePlay.equals(AppUtils.getBuildFlavor())) {
-            MenuItem donateItem = mNavigationView.getMenu()
-                    .findItem(R.id.menu_activity_main_donate);
-
-            if (donateItem != null)
-                donateItem.setVisible(true);
-        }*/
     }
 
     @Override
@@ -220,21 +218,17 @@ public class HomeActivity
     {
         if (mChosenMenuItemId == 0) {
             // Do nothing
-        } /*else if (R.id.menu_activity_main_manage_devices == mChosenMenuItemId) {
-            startActivity(new Intent(this, ManageDevicesActivity.class));
-        }*/ else if (R.id.menu_activity_main_about == mChosenMenuItemId) {
+        }  else if (R.id.menu_activity_main_about == mChosenMenuItemId) {
             FragmentManager fml = getFragmentManager();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             Webview_Fragment wf = new Webview_Fragment();
             ft.replace(R.id.activitiy_home_fragment,wf);
             ft.commit();
-            //startActivity(new Intent(this, Webview_Fragment.class)); //webview added
+            //webview added
         } else if (R.id.menu_activity_main_send_application == mChosenMenuItemId) {
             new ShareAppDialog(HomeActivity.this)
                     .show();
-        } /*else if (R.id.menu_activity_main_web_share == mChosenMenuItemId) {
-            startActivity(new Intent(this, WebShareActivity.class));
-        }*/ else if (R.id.menu_activity_main_preferences == mChosenMenuItemId) {
+        } else if (R.id.menu_activity_main_preferences == mChosenMenuItemId) {
             startActivity(new Intent(this, PreferencesActivity.class));
         } else if (R.id.menu_activity_main_home == mChosenMenuItemId){
             FragmentManager fml = getFragmentManager();
@@ -242,42 +236,9 @@ public class HomeActivity
             TransferGroupListFragment tgf = new TransferGroupListFragment();
             ft.replace(R.id.activitiy_home_fragment,tgf);
             ft.commit();
-            //startActivity(new Intent(this, TransferGroupListFragment.class)); //Change Activity name
         } else if (R.id.menu_activity_main_exit == mChosenMenuItemId) {
             exitApp();
-        } /*else if (R.id.menu_activity_main_donate == mChosenMenuItemId) {
-            try {
-                startActivity(new Intent(this, Class.forName("com.genonbeta.TrebleShot.activity.DonationActivity")));
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-        } else if (R.id.menu_activity_main_dev_survey == mChosenMenuItemId) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(R.string.text_developmentSurvey);
-            builder.setMessage(R.string.text_developmentSurveySummary);
-            builder.setNegativeButton(R.string.genfw_uwg_later, null);
-            builder.setPositiveButton(R.string.butn_temp_doIt, new DialogInterface.OnClickListener()
-            {
-                @Override
-                public void onClick(DialogInterface dialog, int which)
-                {
-                    try {
-                        startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(
-                                "https://docs.google.com/forms/d/e/1FAIpQLScmwX923MACmHvZTpEyZMDCxRQjrd8b67u9p9MOjV1qFVp-_A/viewform?usp=sf_link"
-                        )));
-                    } catch (ActivityNotFoundException e) {
-                        Toast.makeText(HomeActivity.this, R.string.mesg_temp_noBrowser,
-                                Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-            builder.show();
-        } else if (R.id.menu_activity_feedback == mChosenMenuItemId) {
-            AppUtils.createFeedbackIntent(HomeActivity.this);
-        } else if (R.id.menu_activity_trustzone == mChosenMenuItemId) {
-            toggleTrustZone();
-        }*/
-
+        }
         mChosenMenuItemId = 0;
     }
 
@@ -333,29 +294,4 @@ public class HomeActivity
         MenuItem item = mNavigationView.getMenu().findItem(R.id.menu_activity_main_about);
         item.setTitle(R.string.text_newVersionAvailable);
     }
-
-    /*public void requestTrustZoneStatus()
-    {
-        AppUtils.startForegroundService(this, new Intent(this, CommunicationService.class)
-                .setAction(CommunicationService.ACTION_REQUEST_TRUSTZONE_STATUS));
-    }
-
-    /*public void toggleTrustZone()
-    {
-        AppUtils.startForegroundService(this, new Intent(this, CommunicationService.class)
-                .setAction(CommunicationService.ACTION_TOGGLE_SEAMLESS_MODE));
-    }*/
-
-    /*private class ActivityReceiver extends BroadcastReceiver
-    {
-        @Override
-        public void onReceive(Context context, Intent intent)
-        {
-            if (CommunicationService.ACTION_TRUSTZONE_STATUS.equals(intent.getAction())
-                    && mTrustZoneToggle != null)
-                mTrustZoneToggle.setTitle(intent.getBooleanExtra(
-                        CommunicationService.EXTRA_STATUS_STARTED, false)
-                        ? R.string.butn_turnTrustZoneOff : R.string.butn_turnTrustZoneOn);
-        }
-    }*/
 }

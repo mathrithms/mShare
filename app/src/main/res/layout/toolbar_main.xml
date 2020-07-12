@@ -16,9 +16,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/msBlue"
-            app:navigationIcon="@drawable/mshare_menu_icon"
-            android:foregroundTint="@color/msWhite"/>
+            android:background="@color/msWhite"
+            tools:override="true"/>
 
         <com.genonbeta.android.framework.widget.PowerfulActionMode
             android:id="@+id/content_powerful_action_mode"

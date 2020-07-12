@@ -26,7 +26,7 @@ public class TransferPathResolverRecyclerAdapter extends PathResolverRecyclerAda
     public Holder.Index<String> onFirstItem()
     {
         if (mDevice != null)
-            return new Holder.Index<>(mDevice.nickname, R.drawable.ic_device_hub_white_24dp,
+            return new Holder.Index<>(mDevice.nickname, R.drawable.ic_close_white_24dp,
                     null);
 
         return new Holder.Index<>(mHomeName, R.drawable.ic_home_white_24dp, null);

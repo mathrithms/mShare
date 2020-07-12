@@ -32,7 +32,7 @@
 
         <!-- app styling -->
         <item name="backgroundDialog">@drawable/mshare_bg_white</item>
-        <item name="backgroundEdgeAction">@drawable/background_edge_action</item>
+        <!--<item name="backgroundEdgeAction">@drawable/background_edge_action</item>-->
         <item name="backgroundGradient">@drawable/mshare_bg_white</item>
         <item name="backgroundGradientBottom">@drawable/mshare_bg_white</item>
         <item name="backgroundGradientTop">@drawable/mshare_bg_white</item>
@@ -118,8 +118,8 @@
     <!--
         <item name="fastScrollBackground">@drawable/fastscroll_default_bubble_dark</item>
     -->
-        <item name="rectSelector">@drawable/rect_selector_dark</item>
-        <item name="rippleBackground">@drawable/ripple_background_dark</item>
+        <!--<item name="rectSelector">@drawable/rect_selector_dark</item>-->
+        <!--<item name="rippleBackground">@drawable/ripple_background_dark</item>-->
         <!--<item name="roundSelector">@drawable/round_selector_dark</item>-->
         <!--<item name="roundProgressBar">@drawable/round_progress_bar_dark</item>-->
         <item name="roundProgressBarShape">@drawable/round_progress_bar_shape_dark</item>
@@ -127,11 +127,11 @@
         <item name="selectionAccentColor">@color/selection_accent_dark</item>
         <item name="selectionColor">@color/selection_dark</item>
     -->
-        <item name="selectableItemBackground">@drawable/selectable_item_background_dark</item>
+        <!--<item name="selectableItemBackground">@drawable/selectable_item_background_dark</item>-->
     <!--
         <item name="snackbarBackground">@drawable/background_snackbar_dark</item>
     -->
-        <item name="stateSelectedImage">@drawable/state_selected_image_dark</item>
+        <!--<item name="stateSelectedImage">@drawable/state_selected_image_dark</item>-->
         <!--<item name="stateSelectedImageRounded">@drawable/state_selected_image_rounded_dark</item>-->
     <!--
         <item name="stateSelectedImageRoundedGuiding">

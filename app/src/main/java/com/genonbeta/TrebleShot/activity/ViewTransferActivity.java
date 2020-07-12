@@ -78,8 +78,8 @@ public class ViewTransferActivity
     private MenuItem mShowFilesMenu;
     private MenuItem mAddDeviceMenu;
     private MenuItem mSettingsMenu;
-    private MenuItem mWebShareShortcut;
-    private MenuItem mToggleBrowserShare;
+    //private MenuItem mWebShareShortcut;
+    //private MenuItem mToggleBrowserShare;
     private CrunchLatestDataTask mDataCruncher;
     private BroadcastReceiver mReceiver = new BroadcastReceiver()
     {
@@ -301,8 +301,6 @@ public class ViewTransferActivity
         mShowFilesMenu = menu.findItem(R.id.actions_transfer_receiver_show_files);
         mAddDeviceMenu = menu.findItem(R.id.actions_transfer_sender_add_device);
         mSettingsMenu = menu.findItem(R.id.actions_transfer_settings);
-        //mWebShareShortcut = menu.findItem(R.id.actions_transfer_web_share_shortcut);
-        //mToggleBrowserShare = menu.findItem(R.id.actions_transfer_toggle_browser_share);
 
         showMenus();
 
@@ -382,28 +380,7 @@ public class ViewTransferActivity
                     }
                 }).show();
             }
-        } /*else if (item.getItemId() == R.id.actions_transfer_toggle_browser_share) {
-            mGroup.isServedOnWeb = !mGroup.isServedOnWeb;
-            getDatabase().update(mGroup);
-            showMenus();
-
-            if (mGroup.isServedOnWeb)
-                AppUtils.startWebShareActivity(this, true);
-        } else if (item.getGroupId() == R.id.actions_abs_view_transfer_activity_settings) {
-            mDeviceId = item.getOrder() < mTransactionIndex.assignees.size()
-                    ? mTransactionIndex.assignees.get(item.getOrder()).deviceId
-                    : null;
-
-            TransferFileExplorerFragment fragment = (TransferFileExplorerFragment)
-                    getSupportFragmentManager()
-                            .findFragmentById(R.id.activity_transaction_content_frame);
-
-            if (fragment != null && fragment.setDeviceId(mDeviceId))
-                fragment.refreshList();
-        } /*else if (item.getItemId() == R.id.actions_transfer_web_share_shortcut) {
-            AppUtils.startWebShareActivity(this, false);
-        } else
-            return super.onOptionsItemSelected(item);*/
+        }
 
         return true;
     }
@@ -514,10 +491,6 @@ public class ViewTransferActivity
         } else
             mToggleMenu.setVisible(false);
 
-//        mToggleBrowserShare.setTitle(mGroup.isServedOnWeb ? R.string.butn_hideOnBrowser
-   //             : R.string.butn_shareOnBrowser);
-   //     mToggleBrowserShare.setVisible(hasOutgoing || mGroup.isServedOnWeb);
-//        mWebShareShortcut.setVisible(hasOutgoing && mGroup.isServedOnWeb);
         mCnTestMenu.setVisible(hasAnyFiles);
         mAddDeviceMenu.setVisible(hasOutgoing);
         mRetryMenu.setVisible(hasIncoming);

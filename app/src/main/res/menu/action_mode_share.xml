@@ -1,15 +1,19 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <item
         android:id="@+id/mshare_action_mode_share"
         android:icon="@drawable/ic_send_white_24dp"
         android:title="@string/ms_butn_shareWithDevice"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:visible="true"
+        android:iconTint="@color/msBlack"
+        tools:Override="true"
+        tools:targetApi="o" />
 
     <item
         android:id="@+id/action_mode_share_all_apps"
         android:icon="@drawable/mshare_share"
         android:title="@string/butn_shareWithOtherApps" />
-
 
 </menu>

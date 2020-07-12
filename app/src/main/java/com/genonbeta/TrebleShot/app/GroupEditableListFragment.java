@@ -54,22 +54,7 @@ public abstract class GroupEditableListFragment<T extends GroupEditableListAdapt
 
         mGroupingOptions.clear();
         mGroupingOptions.putAll(options);
-
-        /*if (mGroupingOptions.size() > 0) {
-            inflater.inflate(R.menu.actions_abs_group_shareable_list, menu);
-            MenuItem groupingItem = menu.findItem(R.id.actions_abs_group_shareable_grouping);
-
-            if (groupingItem != null)
-                applyDynamicMenuItems(groupingItem, R.id.actions_abs_group_shareable_group_grouping, mGroupingOptions);
-        }*/
     }
-
-    /*@Override
-    public void onPrepareOptionsMenu(Menu menu)
-    {
-        super.onPrepareOptionsMenu(menu);
-        checkPreferredDynamicItem(menu.findItem(R.id.actions_abs_group_shareable_grouping), getGroupingCriteria(), mGroupingOptions);
-    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)

@@ -32,7 +32,7 @@ public class Webview_Fragment extends Fragment {
         WebView w = (WebView)v.findViewById(R.id.webview);
         w.getSettings().getJavaScriptEnabled();
         w.setWebViewClient(new WebViewClient());
-        w.loadUrl("https://www.google.co.in/");
+        w.loadUrl("http://opensource.mathrithms.com/");
         return v;
     }
 }

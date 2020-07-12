@@ -29,12 +29,6 @@
             android:layout_height="match_parent"
             android:contentDescription="@string/text_image" />
 
-        <!--<ProgressBar
-            android:id="@+id/progressBar"
-            style="@style/Widget.TrebleShot.ProgressBar.Horizontal.Oval"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />-->
-
         <include
             layout="@layout/generic_view_selection_rounded"
             android:layout_width="match_parent"

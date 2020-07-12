@@ -150,7 +150,7 @@ public class BarcodeConnectFragment
         View view = inflater.inflate(R.layout.layout_barcode_connect, container, false);
 
         mConductContainer = view.findViewById(R.id.layout_barcode_connect_conduct_container);
-        mTextModeIndicator = view.findViewById(R.id.layout_barcode_connect_mode_text_indicator);
+//      mTextModeIndicator = view.findViewById(R.id.layout_barcode_connect_mode_text_indicator);
         mConductButton = view.findViewById(R.id.layout_barcode_connect_conduct_button);
         mBarcodeView = view.findViewById(R.id.layout_barcode_connect_barcode_view);
         mConductText = view.findViewById(R.id.layout_barcode_connect_conduct_text);

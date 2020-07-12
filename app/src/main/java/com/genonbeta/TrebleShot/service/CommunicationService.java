@@ -197,14 +197,6 @@ public class CommunicationService extends Service
                 }
             });
 
-
-        /*try {
-            mWebShareServer = new WebShareServer(this, AppConfig.SERVER_PORT_WEBSHARE);
-            mWebShareServer.setAsyncRunner(new WebShareServer.BoundRunner(
-                    Executors.newFixedThreadPool(AppConfig.WEB_SHARE_CONNECTION_MAX)));
-        } catch (Throwable t) {
-            Log.e(TAG, "Failed to start Web Share Server");
-        }*/
     }
 
     @Override
@@ -416,11 +408,11 @@ public class CommunicationService extends Service
             } else if (ACTION_REQUEST_WEBSHARE_STATUS.equals(intent.getAction())) {
                 sendWebShareStatus();
             } else if (ACTION_TOGGLE_WEBSHARE.equals(intent.getAction())) {
-                if (intent.hasExtra(EXTRA_TOGGLE_WEBSHARE_START_ALWAYS))
-                    setWebShareEnabled(intent.getBooleanExtra(EXTRA_TOGGLE_WEBSHARE_START_ALWAYS,
-                            false), true);
-                else
-                    toggleWebShare();
+                //if (intent.hasExtra(EXTRA_TOGGLE_WEBSHARE_START_ALWAYS))
+                    //setWebShareEnabled(intent.getBooleanExtra(EXTRA_TOGGLE_WEBSHARE_START_ALWAYS,
+                      //      false), true);
+                //else
+                    //toggleWebShare();
             }
         }
 
@@ -446,7 +438,7 @@ public class CommunicationService extends Service
                             String.valueOf(1)), values);
         }
 
-        setWebShareEnabled(false, false);
+        //setWebShareEnabled(false, false);
         sendTrustZoneStatus();
 
         if (getHotspotUtils().unloadPreviousConfig()) {
@@ -621,7 +613,7 @@ public class CommunicationService extends Service
     public void setupHotspot()
     {
         boolean isEnabled = !getHotspotUtils().isEnabled();
-        boolean overrideTrustZone = getDefaultPreferences().getBoolean("hotspot_trust", false);
+        boolean overrideTrustZone = getDefaultPreferences().getBoolean("hotspot_trust", true);
 
         // On Oreo devices, we will use platform specific code.
         if (overrideTrustZone && (!isEnabled || Build.VERSION.SDK_INT < 26)) {
@@ -658,19 +650,19 @@ public class CommunicationService extends Service
 
     public void updateServiceState(boolean seamlessMode)
     {
+        seamlessMode = true;
         boolean broadcastStatus = mSeamlessMode != seamlessMode;
         mSeamlessMode = seamlessMode;
-        mPinAccess = getDefaultPreferences().getInt(Keyword.NETWORK_PIN, -1) != -1;
+        mPinAccess = getDefaultPreferences().getInt(Keyword.NETWORK_PIN, 1) != 1; //I changed value +1 from -1 for both 1s
 
         if (broadcastStatus)
             sendTrustZoneStatus();
 
         startForeground(CommunicationNotificationHelper.SERVICE_COMMUNICATION_FOREGROUND_NOTIFICATION_ID,
-                getNotificationHelper().getCommunicationServiceNotification(mSeamlessMode, mPinAccess,
-                        mWebShareServer != null && mWebShareServer.isAlive()).build());
+                getNotificationHelper().getCommunicationServiceNotification(mSeamlessMode, mPinAccess).build());
     }
 
-    public void setWebShareEnabled(boolean enable, boolean updateServiceState)
+    /*public void setWebShareEnabled(boolean enable, boolean updateServiceState)
     {
         boolean canStart = !mWebShareServer.isAlive();
 
@@ -686,12 +678,12 @@ public class CommunicationService extends Service
         if (updateServiceState)
             updateServiceState(mSeamlessMode);
         sendWebShareStatus();
-    }
+    }*/
 
-    public void toggleWebShare()
+    /*public void toggleWebShare()
     {
         setWebShareEnabled(!mWebShareServer.isAlive(), true);
-    }
+    }*/
 
     public class CommunicationServer extends CoolSocket
     {

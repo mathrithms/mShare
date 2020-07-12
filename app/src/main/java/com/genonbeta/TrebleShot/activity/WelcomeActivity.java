@@ -53,7 +53,6 @@ public class WelcomeActivity extends Activity
         final ProgressBar progressBar = findViewById(R.id.activity_welcome_progress_bar);
         final ViewPager viewPager = findViewById(R.id.activity_welcome_view_pager);
         final DynamicViewPagerAdapter pagerAdapter = new DynamicViewPagerAdapter();
-        //final DottedProgressBar progressBar = (DottedProgressBar) findViewById(R.id.activity_welcome_progress_bar);
 
         {
             @ColorInt
@@ -95,7 +94,6 @@ public class WelcomeActivity extends Activity
             setUserProfile();
         }
 
-        //pagerAdapter.addView(getLayoutInflater().inflate(R.layout.layout_welcome_page_4, null, false));
 
         {
             View view = getLayoutInflater().inflate(R.layout.layout_welcome_page_5, null, false);

@@ -31,7 +31,8 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:label"
         tools:targetApi="p">
-        <activity android:name=".activity.ConnectionManagerRecieveActivity"/>
+        <activity android:name=".activity.ConnectionManagerRecieveActivity"
+            android:label="@string/ms_recieve"/>
         <!-- tools:replace="android:appComponentFactory" android:appComponentFactory="@string/app_name" -->
         <activity
             android:name=".activity.HomeActivity"
@@ -68,16 +69,16 @@
         </activity>
         <activity
             android:name=".activity.AddDevicesToTransferActivity"
-            android:label="@string/text_addDevicesToTransfer"
+            android:label="@string/ms_addDevices"
             android:theme="@style/Theme.TrebleShot.NoActionBar.StaticStatusBar" />
+
         <activity
             android:name=".activity.FileExplorerActivity"
             android:label="@string/text_fileExplorer"
             android:theme="@style/Theme.TrebleShot.NoActionBar.StaticStatusBar" />
         <activity
             android:name=".activity.ConnectionManagerActivity"
-            android:label="@string/text_connectDevices"
-            android:theme="@style/Theme.TrebleShot.NoActionBar.StaticStatusBar" />
+            android:label="@string/ms_send"/>
         <activity
             android:name=".activity.ContentSharingActivity"
             android:label="@string/text_send"
@@ -129,11 +130,10 @@
         <activity
             android:name=".activity.ChangelogActivity"
             android:label="@string/text_changelog" /> <!-- todo: Remember, we are always using dark theme for this for better effects -->
-        <activity android:name=".activity.BarcodeScannerActivity" />
-        <!--
-android:label="@string/text_scanQrCode"
-        android:theme="@style/Theme.TrebleShot.BarcodeScannerActivity" />
-        -->
+        <activity android:name=".activity.BarcodeScannerActivity"
+            android:label="@string/text_scanQrCode"
+            android:theme="@style/Theme.TrebleShot.BarcodeScannerActivity" />
+
         <activity
             android:name=".activity.WelcomeActivity"
             android:label="@string/text_welcome"

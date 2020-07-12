@@ -11,7 +11,6 @@
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryDark">#ccc</color>
     <color name="colorPrimaryDark23">#ffffffff</color>
-    <!--<color name="colorSecondary">#66bb6a</color>-->
     <color name="colorSurface">#fefefe</color>
     <color name="windowBackground">#ffffff</color>
     <!-- local coloring-->

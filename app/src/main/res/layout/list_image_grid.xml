@@ -63,7 +63,11 @@
         android:background="@drawable/mshare_bg_white"
         android:padding="12dp">
 
-        <include layout="@layout/generic_view_selection_rounded_guiding" />
+        <include
+            layout="@layout/generic_view_selection_rounded_guiding"
+            android:layout_height="25dp"
+            android:layout_width="25dp"
+            android:layout_gravity="end"/>
 
     </FrameLayout>
 

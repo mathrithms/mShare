@@ -279,7 +279,7 @@ public class AddDevicesToTransferActivity extends Activity
     private void startConnectionManagerActivity()
     {
         startActivityForResult(new Intent(AddDevicesToTransferActivity.this, ConnectionManagerActivity.class)
-                .putExtra(ConnectionManagerActivity.EXTRA_ACTIVITY_SUBTITLE, getString(R.string.text_addDevicesToTransfer)), REQUEST_CODE_CHOOSE_DEVICE);
+                .putExtra(ConnectionManagerActivity.EXTRA_ACTIVITY_SUBTITLE, getString(R.string.ms_addDevices)), REQUEST_CODE_CHOOSE_DEVICE);
     }
 
     public void takeOnProcessMode()

@@ -59,7 +59,9 @@ public class ApplicationListFragment
                             @Override
                             public void onClick(View v)
                             {
-                                performLayoutClickOpen(clazz);
+                                //performLayoutClickOpen(clazz);
+                                if (getSelectionConnection() != null)
+                                    getSelectionConnection().setSelected(clazz.getAdapterPosition());
                             }
                         });
 
@@ -134,7 +136,7 @@ public class ApplicationListFragment
         return context.getString(R.string.text_application);
     }
 
-    @Override
+    /*@Override
     public boolean performLayoutClickOpen(EditableListAdapter.EditableViewHolder holder)
     {
         try {
@@ -164,5 +166,5 @@ public class ApplicationListFragment
         }
 
         return false;
-    }
+    }*/
 }

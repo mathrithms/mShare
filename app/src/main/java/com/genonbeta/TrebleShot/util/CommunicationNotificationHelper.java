@@ -40,14 +40,13 @@ public class CommunicationNotificationHelper
     }
 
     public DynamicNotification getCommunicationServiceNotification(boolean seamlessMode,
-                                                                   boolean pinAccess,
-                                                                   boolean webShare)
+                                                                   boolean pinAccess)
     {
         DynamicNotification notification = getUtils().buildDynamicNotification(SERVICE_COMMUNICATION_FOREGROUND_NOTIFICATION_ID, NotificationUtils.NOTIFICATION_CHANNEL_LOW);
         StringBuilder builder = new StringBuilder();
 
-        if(webShare)
-            builder.append(getContext().getString(R.string.text_webShare));
+        /*if(webShare)
+            builder.append(getContext().getString(R.string.text_webShare));*/
 
         if (builder.length() > 0)
             builder.append(" - ");
@@ -58,14 +57,15 @@ public class CommunicationNotificationHelper
                 .setContentTitle(builder.toString())
                 .setContentText(getContext().getString(R.string.text_communicationServiceStop))
                 .setAutoCancel(true)
-                .addAction(R.drawable.ic_compare_arrows_white_24dp_static, getContext().getString(seamlessMode ? R.string.butn_turnTrustZoneOff : R.string.butn_turnTrustZoneOn),
-                        PendingIntent.getService(getContext(), AppUtils.getUniqueNumber(), new Intent(getContext(), CommunicationService.class).setAction(CommunicationService.ACTION_TOGGLE_SEAMLESS_MODE), PendingIntent.FLAG_CANCEL_CURRENT))
+                .addAction(R.drawable.ic_block_white_24dp, getContext().getString(R.string.ms_endsession),
+                        PendingIntent.getService(getContext(), AppUtils.getUniqueNumber(), new Intent(getContext(), CommunicationService.class), PendingIntent.FLAG_CANCEL_CURRENT))
                 .setContentIntent(PendingIntent.getService(getContext(), AppUtils.getUniqueNumber(), new Intent(getContext(), CommunicationService.class)
                         .setAction(CommunicationService.ACTION_END_SESSION), 0));
 
-        if (pinAccess)
+        /*if (pinAccess)
             notification.addAction(R.drawable.ic_autorenew_white_24dp_static, getContext().getString(R.string.butn_revokePin),
                     PendingIntent.getService(getContext(), AppUtils.getUniqueNumber(), new Intent(getContext(), CommunicationService.class).setAction(CommunicationService.ACTION_REVOKE_ACCESS_PIN), PendingIntent.FLAG_CANCEL_CURRENT));
+                    */
 
         return notification.show();
     }

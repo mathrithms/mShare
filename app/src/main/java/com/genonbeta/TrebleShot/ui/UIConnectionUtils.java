@@ -12,6 +12,7 @@ import android.os.Looper;
 import android.provider.Settings;
 import android.view.View;
 
+import androidx.annotation.RequiresApi;
 import androidx.annotation.WorkerThread;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentActivity;
@@ -429,6 +430,7 @@ public class UIConnectionUtils
                     .setNegativeButton(R.string.butn_cancel, defaultNegativeListener)
                     .setPositiveButton(R.string.butn_ask, new DialogInterface.OnClickListener()
                     {
+                        @RequiresApi(api = Build.VERSION_CODES.M)
                         @Override
                         public void onClick(DialogInterface dialog, int which)
                         {

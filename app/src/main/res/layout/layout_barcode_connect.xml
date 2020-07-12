@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -11,15 +12,6 @@
         android:layout_height="match_parent"
         app:zxing_preview_scaling_strategy="centerCrop"
         app:zxing_scanner_layout="@layout/external_layout_barcode_scanner" />
-
-    <ImageView
-        android:id="@+id/layout_barcode_connect_mode_text_indicator"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:visibility="gone"
-        android:background="?rippleBackground"
-        app:srcCompat="@drawable/ic_short_text_white_24dp" />
 
     <RelativeLayout
         android:id="@+id/container_task"

@@ -8,10 +8,13 @@
     <ImageView
         android:id="@+id/visitView"
         style="@style/OverflowButton"
+        android:layout_height="25dp"
+        android:layout_width="25dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        app:srcCompat="@drawable/state_selected_image_rounded_guiding" />
+        app:srcCompat="@drawable/state_selected_image_rounded_guiding"
+        android:background="?rectSelector"/>
 
     <FrameLayout
         android:id="@+id/layout_image"

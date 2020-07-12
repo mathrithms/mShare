@@ -15,7 +15,6 @@ import android.widget.ProgressBar;
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentFactory;
 import androidx.fragment.app.FragmentTransaction;
@@ -177,7 +176,6 @@ public class ConnectionManagerActivity
         setContentView(R.layout.activity_connection_manager);
 
         FragmentFactory factory = getSupportFragmentManager().getFragmentFactory();
-        Toolbar toolbar = findViewById(R.id.toolbar);
         mAppBarLayout = findViewById(R.id.app_bar);
         mProgressBar = findViewById(R.id.activity_connection_establishing_progress_bar);
         mToolbarLayout = findViewById(R.id.toolbar_layout);
@@ -191,7 +189,6 @@ public class ConnectionManagerActivity
         mFilter.addAction(CommunicationService.ACTION_DEVICE_ACQUAINTANCE);
         mFilter.addAction(CommunicationService.ACTION_INCOMING_TRANSFER_READY);
 
-        setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -400,40 +397,13 @@ public class ConnectionManagerActivity
                 public void onClick(View v)
                 {
                     switch (v.getId()) {
-                        case R.id.connection_option_devices:
-                            updateFragment(AvailableFragment.UseKnownDevice);
-                            break;
-                        //case R.id.connection_option_hotspot:
-                          //  updateFragment(AvailableFragment.CreateHotspot);
-                            //break;
-                        //case R.id.connection_option_network:
-                          //  updateFragment(AvailableFragment.UseExistingNetwork);
-                            //break;
-                        //case R.id.connection_option_manual_ip:
-                          //  updateFragment(AvailableFragment.EnterIpAddress);
-                            //break;
                         case R.id.connection_option_scan:
                             startCodeScanner();
                     }
                 }
             };
 
-            view.findViewById(R.id.connection_option_devices).setOnClickListener(listener);
-            //view.findViewById(R.id.connection_option_hotspot).setOnClickListener(listener);
-            //view.findViewById(R.id.connection_option_network).setOnClickListener(listener);
             view.findViewById(R.id.connection_option_scan).setOnClickListener(listener);
-            //view.findViewById(R.id.connection_option_manual_ip).setOnClickListener(listener);
-
-            //view.findViewById(R.id.connection_option_guide).setOnClickListener(new View.OnClickListener()
-            /*{
-                @Override
-                public void onClick(View v)
-                {
-                    new ConnectionSetUpAssistant(getActivity())
-                            .startShowing();
-                }
-            });*/
-
 
             return view;
         }
@@ -450,9 +420,6 @@ public class ConnectionManagerActivity
                 public void onClick(View v)
                 {
                     switch (v.getId()) {
-                        case R.id.connection_option_devices:
-                            updateFragment(AvailableFragment.UseKnownDevice);
-                            break;
                         case R.id.connection_option_hotspot:
                             updateFragment(AvailableFragment.CreateHotspot);
                             break;
@@ -460,7 +427,6 @@ public class ConnectionManagerActivity
                 }
             };
 
-            viewR.findViewById(R.id.connection_option_devices).setOnClickListener(listener);
             viewR.findViewById(R.id.connection_option_hotspot).setOnClickListener(listener);
 
             return viewR;

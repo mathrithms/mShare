@@ -83,30 +83,8 @@ public class TransferAssigneeListFragment
     {
         super.onViewCreated(view, savedInstanceState);
 
-        setEmptyImage(R.drawable.ic_device_hub_white_24dp);
-        setEmptyText(getString(R.string.text_noDeviceForTransfer));
-        /*useEmptyActionButton(getString(R.string.butn_shareOnBrowser), new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                mHeldGroup.isServedOnWeb = !mHeldGroup.isServedOnWeb;
-                AppUtils.getDatabase(getContext()).update(mHeldGroup);
-
-                if (mHeldGroup.isServedOnWeb)
-                    AppUtils.startWebShareActivity(getActivity(), true);
-            }
-        });*/
-
-        /*getEmptyActionButton().setOnLongClickListener(new View.OnLongClickListener()
-        {
-            @Override
-            public boolean onLongClick(View v)
-            {
-                AppUtils.startWebShareActivity(getActivity(), false);
-                return true;
-            }
-        });*/
+        //setEmptyImage(R.drawable.ic_close_white_24dp);
+        setEmptyText(getString(R.string.ms_noDevicesAdded));
 
         updateTransferGroup();
 

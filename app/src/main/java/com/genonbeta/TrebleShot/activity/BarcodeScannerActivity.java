@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.genonbeta.TrebleShot.R;
@@ -13,7 +14,7 @@ import com.genonbeta.TrebleShot.fragment.BarcodeConnectFragment;
 import com.genonbeta.TrebleShot.object.NetworkDevice;
 import com.genonbeta.TrebleShot.ui.callback.NetworkDeviceSelectedListener;
 
-public class BarcodeScannerActivity extends Activity
+public class BarcodeScannerActivity extends AppCompatActivity
 {
     public static final String EXTRA_DEVICE_ID = "extraDeviceId";
     public static final String EXTRA_CONNECTION_ADAPTER = "extraConnectionAdapter";
@@ -23,9 +24,6 @@ public class BarcodeScannerActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barcode_scanner);
-
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
         setResult(RESULT_CANCELED);
 

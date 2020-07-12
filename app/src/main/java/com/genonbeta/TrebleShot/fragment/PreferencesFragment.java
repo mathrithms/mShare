@@ -18,7 +18,5 @@ public class PreferencesFragment extends PreferenceFragmentCompat
             addPreferencesFromResource(R.xml.preferences_main_notification);
         else
             addPreferencesFromResource(R.xml.preferences_main_notification_oreo);
-
-        //addPreferencesFromResource(R.xml.preferences_main_advanced);
     }
 }

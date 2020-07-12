@@ -131,12 +131,12 @@ public class ConnectionUtils {
 
                     Log.d(TAG, "establishHotspotConnection(): There is DHCP info provided waiting to reach the address " + testedRemoteAddress);
 
-                    /*if (NetworkUtils.ping(testedRemoteAddress, pingTimeout)) {
+                    if (NetworkUtils.ping(testedRemoteAddress, pingTimeout)) {
                         Log.d(TAG, "establishHotspotConnection(): AP has been reached. Returning OK state.");
                         remoteAddress = testedRemoteAddress;
                         break;
                     } else
-                        Log.d(TAG, "establishHotspotConnection(): Connection check ping failed");*/
+                        Log.d(TAG, "establishHotspotConnection(): Connection check ping failed");
 
                     if (UIConnectionUtils.isOSAbove(Build.VERSION_CODES.P)
                             ? NetworkUtils.ping(testedRemoteAddress, pingTimeout)

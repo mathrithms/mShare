@@ -51,10 +51,6 @@ public abstract class Activity extends AppCompatActivity
     public static final int REQUEST_PICK_PROFILE_PHOTO = 1000;
     private final List<WorkerService.RunningTask> mAttachedTasks = new ArrayList<>();
     private AlertDialog mOngoingRequest;
-    //private boolean mDarkThemeRequested = false;
-    //private boolean mAmoledDarkThemeRequested = false;
-    //private boolean mThemeLoadingFailed = false;
-    //private boolean mCustomFontsEnabled = false;
     private boolean mSkipPermissionRequest = false;
     private boolean mWelcomePageDisallowed = false;
     private boolean mExitAppRequested = false;
@@ -62,60 +58,6 @@ public abstract class Activity extends AppCompatActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
-        //mDarkThemeRequested = isDarkThemeRequested();
-        //mAmoledDarkThemeRequested = isAmoledDarkThemeRequested();
-        //mCustomFontsEnabled = isUsingCustomFonts();
-
-        /*if (mDarkThemeRequested) {
-            try {
-                @StyleRes
-                int currentThemeRes = getPackageManager().getActivityInfo(getComponentName(), 0).theme;
-
-                Log.d(Activity.class.getSimpleName(), "Activity theme id: " + currentThemeRes);
-
-                if (currentThemeRes == 0)
-                    currentThemeRes = getApplicationInfo().theme;
-
-                Log.d(Activity.class.getSimpleName(), "After change theme: " + currentThemeRes);
-
-                @StyleRes
-                int appliedRes = 0;
-
-                switch (currentThemeRes) {
-                    case R.style.Theme_TrebleShot:
-                        appliedRes = R.style.Theme_TrebleShot_Dark;
-                        break;
-                    case R.style.Theme_TrebleShot_NoActionBar:
-                        appliedRes = R.style.Theme_TrebleShot_Dark_NoActionBar;
-                        break;
-                    case R.style.Theme_TrebleShot_NoActionBar_StaticStatusBar:
-                        appliedRes = R.style.Theme_TrebleShot_Dark_NoActionBar_StaticStatusBar;
-                        break;
-                    default:
-                        Log.e(Activity.class.getSimpleName(), "There is an unknown theme applied. "
-                                + "Resources could fail. "
-                                + "Dark theme won't be effective");
-                }
-
-                mThemeLoadingFailed = appliedRes == 0;
-
-                if (!mThemeLoadingFailed) {
-                    setTheme(appliedRes);
-
-                    if (mAmoledDarkThemeRequested)
-                        getTheme().applyStyle(R.style.BlackPatch, true);
-                }
-            } catch (PackageManager.NameNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
-
-        // Apply Ubuntu Font Family as a patch if enabled
-        if (mCustomFontsEnabled) {
-            Log.d(Activity.class.getSimpleName(), "Custom fonts have been applied");
-            getTheme().applyStyle(R.style.TextAppearance_Ubuntu, true);
-        }*/
-
         super.onCreate(savedInstanceState);
     }
 
@@ -123,12 +65,6 @@ public abstract class Activity extends AppCompatActivity
     protected void onResume()
     {
         super.onResume();
-
-        /*if (((mDarkThemeRequested != isDarkThemeRequested()
-                || (isDarkThemeRequested() && mAmoledDarkThemeRequested != isAmoledDarkThemeRequested()))
-                && !mThemeLoadingFailed)
-                || mCustomFontsEnabled != isUsingCustomFonts())
-            recreate();*/
 
         if (!hasIntroductionShown() && !mWelcomePageDisallowed) {
             startActivity(new Intent(this, WelcomeActivity.class));
@@ -363,21 +299,6 @@ public abstract class Activity extends AppCompatActivity
                 getBoolean("introduction_shown", false);
     }
 
-    /*public boolean isAmoledDarkThemeRequested()
-    {
-        return getDefaultPreferences().getBoolean("amoled_theme", false);
-    }
-
-    public boolean isDarkThemeRequested()
-    {
-        return getDefaultPreferences().getBoolean("dark_theme", false);
-    }
-
-    public boolean isUsingCustomFonts()
-    {
-        return getDefaultPreferences().getBoolean("custom_fonts", false)
-                && Build.VERSION.SDK_INT >= 16;
-    }*/
 
     public void loadProfilePictureInto(String deviceName, ImageView imageView)
     {
