@@ -11,7 +11,7 @@
 
     <fragment
         android:id="@+id/activitiy_home_fragment"
-        android:name="com.genonbeta.TrebleShot.fragment.HomeFragment"
+        android:name="com.mathrithms.mShare.fragment.HomeFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

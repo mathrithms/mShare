@@ -4,7 +4,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/preferences_activity_preferences_fragment"
-        android:name="com.genonbeta.TrebleShot.fragment.PreferencesFragment"
+        android:name="com.mathrithms.mShare.fragment.PreferencesFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

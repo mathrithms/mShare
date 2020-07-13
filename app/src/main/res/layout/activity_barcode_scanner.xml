@@ -7,7 +7,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/barcodeScannerFragment"
-        android:name="com.genonbeta.TrebleShot.fragment.BarcodeConnectFragment"
+        android:name="com.mathrithms.mShare.fragment.BarcodeConnectFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:tag="scannerFragment" />

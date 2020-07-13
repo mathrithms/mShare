@@ -30,7 +30,7 @@
 
         <fragment
             android:id="@+id/devicesFragment"
-            android:name="com.genonbeta.TrebleShot.fragment.NetworkDeviceListFragment"
+            android:name="com.mathrithms.mShare.fragment.NetworkDeviceListFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

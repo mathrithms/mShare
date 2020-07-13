@@ -33,7 +33,7 @@
 
         <fragment
             android:id="@+id/activity_file_explorer_fragment_files"
-            android:name="com.genonbeta.TrebleShot.fragment.FileExplorerFragment"
+            android:name="com.mathrithms.mShare.fragment.FileExplorerFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

@@ -5,7 +5,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/activity_changelog_fragment_changelog"
-        android:name="com.genonbeta.TrebleShot.fragment.external.GitHubChangelogListFragment"
+        android:name="com.mathrithms.mShare.fragment.external.GitHubChangelogListFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:tag="changeLogFragment" />
