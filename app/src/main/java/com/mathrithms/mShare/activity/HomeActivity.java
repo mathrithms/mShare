@@ -37,6 +37,8 @@ import com.mathrithms.mShare.util.UpdateUtils;
 import com.genonbeta.android.framework.widget.PowerfulActionMode;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.Objects;
+
 public class HomeActivity
         extends Activity
         implements NavigationView.OnNavigationItemSelectedListener, PowerfulActionModeSupport
@@ -63,6 +65,7 @@ public class HomeActivity
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
 
         mHomeFragment = (HomeFragment) getSupportFragmentManager().findFragmentById(R.id.activitiy_home_fragment);
         mActionMode = findViewById(R.id.content_powerful_action_mode);
@@ -96,7 +99,7 @@ public class HomeActivity
         if (UpdateUtils.hasNewVersion(this))
             highlightUpdater(getDefaultPreferences().getString("availableVersion", null));
 
-        if (!AppUtils.isLatestChangeLogSeen(this)) {
+        /*if (!AppUtils.isLatestChangeLogSeen(this)) {
             new AlertDialog.Builder(this)
                     .setMessage(R.string.mesg_versionUpdatedChangelog)
                     .setPositiveButton(R.string.butn_yes, new DialogInterface.OnClickListener()
@@ -128,7 +131,7 @@ public class HomeActivity
                         }
                     })
                     .show();
-        }
+        }*/
     }
 
     @Override
@@ -202,13 +205,13 @@ public class HomeActivity
             ft.commit();
             //webview added
         } else if (R.id.menu_activity_main_send_application == mChosenMenuItemId) {
-            FragmentManager fml = getFragmentManager();
+            /*FragmentManager fml = getFragmentManager();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             Webview_Fragment wf = new Webview_Fragment();
             ft.replace(R.id.activitiy_home_fragment,wf);
-            ft.commit();
-            //new ShareAppDialog(HomeActivity.this)
-              //      .show();
+            ft.commit();*/
+            new ShareAppDialog(HomeActivity.this)
+                    .show();
         } else if (R.id.menu_activity_main_preferences == mChosenMenuItemId) {
             startActivity(new Intent(this, PreferencesActivity.class));
         } else if (R.id.menu_activity_main_home == mChosenMenuItemId){

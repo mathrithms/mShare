@@ -1,9 +1,14 @@
 # mShare
-## Inspired from: TrebleShot libre software file and text sharing app
-Send and receive files over available connections. [FAQ](https://github.com/genonbeta/TrebleShot/blob/master/FAQ.md).
+
+### Project Manager: Anjali Kaushik ([Find me on GitHub](https://github.com/anjalikaushik20))
+### Company: Mathrithms ([Find on GitHub](https://github.com/mathrithms))
+
+## About
+* Send and receive files over available connections.
+* An Indian file sharing app!
 
 ## Get it on
-[<img src="https://f-droid.org/badge/get-it-on.png" width="230">](https://f-droid.org/packages/com.genonbeta.TrebleShot/) [<img src="assets/google-play-badge.png" width="230">](https://play.google.com/store/apps/details?id=com.genonbeta.TrebleShot)
+[<img src="assets/google-play-badge.png" width="230">](https://play.google.com/store/apps/details?id=com.mathrithms.mShare)
 
 ## Main features
 * Pause, resume and reconnect transfers
@@ -16,27 +21,24 @@ Send and receive files over available connections. [FAQ](https://github.com/geno
 * Speed-oriented: Minimal UI optimized for speed
 * Advanced features: Network change handling, choose network based on measured speed
 
-## Project status
-[![Build Status](https://travis-ci.org/genonbeta/TrebleShot.svg)](https://travis-ci.org/genonbeta/TrebleShot)
-[![Translation Status](https://hosted.weblate.org/widgets/trebleshot/-/svg-badge.svg)](https://hosted.weblate.org/engage/trebleshot/)
-
 ## Build from source
-Required tools;
+Required tools:
 * Build tools: 28.0.3
 * Support library: 1.0.0 - androidx
 * Gradle plugin: 3.2.1
-* Android Studio: 3.2.1
+* Android Studio: 4.0.0
 
 ## Screenshots
-[<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/shot_6.png" width=160>](fastlane/metadata/android/en-US/images/phoneScreenshots/shot_6.png)
+[<img src="https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_1.jpg" width=200>](https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_1.jpg)
+[<img src="https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_2.jpg" width=200>](https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_2.jpg)
+[<img src="https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_3.jpg" width=200>](https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_3.jpg)
+[<img src="https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_4.jpg" width=200>](https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_4.jpg)
+[<img src="https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_5.jpg" width=200>](https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_5.jpg)
+[<img src="https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_6.jpg" width=200>](https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_6.jpg)
+[<img src="https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_7.jpg" width=200>](https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_7.jpg)
+[<img src="https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_8.jpg" width=200>](https://github.com/anjalikaushik20/mShare/blob/master/fastlane/metadata/android/en-IN/images/phoneScreenshots/shot_8.jpg)
 
-## Localization
-To translate TrebleShot, please read
-[this wiki](https://github.com/genonbeta/TrebleShot/wiki/Language-contribution) first if you haven't
-worked with Weblate, where you will find the [TrebleShot localization](https://hosted.weblate.org/engage/TrebleShot/).
-
-
-[![Translation Status](https://hosted.weblate.org/widgets/trebleshot/-/multi-auto.svg)](https://hosted.weblate.org/engage/TrebleShot/)
-
+### Inspiration: TrebleShot libre software file and text sharing app
+### Find on GitHub: [TrebleShot](https://github.com/trebleshot/android)
 
 This app is licensed under GNU Public License version 2.0 or later version.

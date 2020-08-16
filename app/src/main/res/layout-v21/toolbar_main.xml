@@ -16,8 +16,18 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/msWhite"
-            tools:override="true"/>
+            android:background="@color/msBlue"
+            android:theme="@style/myCustomAppBarTheme"
+            tools:override="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/mshare_m_appbar"
+                tools:ignore="ContentDescription" />
+
+        </androidx.appcompat.widget.Toolbar>
 
         <com.genonbeta.android.framework.widget.PowerfulActionMode
             android:id="@+id/content_powerful_action_mode"

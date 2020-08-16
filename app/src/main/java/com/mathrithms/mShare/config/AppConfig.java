@@ -19,15 +19,12 @@ public class AppConfig
             WEB_SHARE_CONNECTION_MAX = 20;
 
     public final static String
-            EMAIL_DEVELOPER = "genonbeta@gmail.com",
+            EMAIL_DEVELOPER = "mathrithms@gmail.com",
             URI_REPO_APP_UPDATE = "https://api.github.com/repos/genonbeta/TrebleShot/releases",
-            URI_REPO_APP_CONTRIBUTORS = "https://api.github.com/repos/genonbeta/TrebleShot/contributors",
-            URI_GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.genonbeta.TrebleShot",
+            URI_GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.mathrithms.mShare",
             URI_REPO_APP = "http://github.com/genonbeta/TrebleShot",
             URI_REPO_ORG = "http://github.com/genonbeta",
             URI_GITHUB_PROFILE = "https://github.com/%s",
-            URI_TRANSLATE = "https://github.com/genonbeta/TrebleShot/wiki/Language-contribution",
-            URI_TELEGRAM_CHANNEL = "https://t.me/trebleshot",
             PREFIX_ACCESS_POINT = "TS_",
             EXT_FILE_PART = "tshare",
             NETWORK_INTERFACE_WIFI = "wlan0",
